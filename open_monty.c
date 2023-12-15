@@ -41,3 +41,7 @@ void open_monty(char **argv, unsigned int lnum)
 			func(&fmt.stack, lnum);
 		}
 		free(fmt.buffer);
+
+	free_format();
+	}
+}

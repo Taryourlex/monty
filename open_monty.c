@@ -37,7 +37,7 @@ void open_monty(char **argv, unsigned int lnum)
 		fmt.val = strtok(NULL, " \n\t\a\r");
 		if (chr != NULL && chr[0] != 35)
 		{
-			func = get_op(chr, lnum);
+			func = retrieve(chr, lnum);
 			func(&fmt.stack, lnum);
 		}
 		free(fmt.buffer);

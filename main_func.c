@@ -1,7 +1,5 @@
 #include "monty.h"
 
-form fmt;
-
 /**
  * main - this checks the number of arguments
  * @argv: the arg vector

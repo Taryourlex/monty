@@ -14,6 +14,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -46,8 +47,6 @@ typedef struct build
 	stack_t *stack;
 	int type;
 } format;
-
-extern format fmt;
 
 
 
@@ -90,4 +89,6 @@ void free_stack(stack_t *);
 void free_form(void);
 void q_push(stack_t **, int);
 void open_monty(char **, unsigned int);
+
+extern format fmt;
 #endif

@@ -86,7 +86,7 @@ void my_stack(stack_t **, unsigned int);
 void my_sub(stack_t **, unsigned int);
 void my_swap(stack_t **, unsigned int);
 void free_stack(stack_t *);
-void free_form(void);
+void free_format(void);
 void q_push(stack_t **, int);
 void open_monty(char **, unsigned int);
 

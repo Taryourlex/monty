@@ -1,6 +1,5 @@
 #include "monty.h"
 
-extern xtrn_t mt;
 
 /**
  * get_op - gets the operation
@@ -75,6 +74,8 @@ void setup_monty(char **argv, unsigned int line_no)
 	}
 	free_xtrn();
 }
+
+extern xtrn_t mt;
 
 /**
  * main - runs the monty script in a noninteractive mode

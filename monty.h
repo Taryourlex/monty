@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MONTY_H_
+#define MONTY_H_
 
 #include <errno.h>
 #include <limits.h>
@@ -8,12 +8,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdbool.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -22,7 +16,7 @@
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct stack_s
 {
@@ -32,22 +26,21 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct build - an external variable
- * @val: linenumber
- * @script: the provided montyscript
+ * struct xtrn_s - an externally declared variable
+ * @value: linenumber
+ * @m_script: the montyscript
  * @buffer: buffer holding the lines
- * @stack: the stack structure
- * @type: decides if to function either as a stack or queue
+ * @stack: the stack struct
+ * @type: decides if to function as stack or queue
  */
-typedef struct build
+typedef struct xtrn_s
 {
-	char *val;
-	FILE *script;
+	char *value;
+	FILE *m_script;
 	char *buffer;
 	stack_t *stack;
 	int type;
-} format;
-
+} xtrn_t;
 
 
 /**
@@ -56,7 +49,7 @@ typedef struct build
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
@@ -64,31 +57,31 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
 char *_itoa(int);
 int my_isdigit(char *);
-void (*retrieve(char *, unsigned int))(stack_t **, unsigned int)
-void my_add(stack_t **, unsigned int);
-void my_div(stack_t **, unsigned int);
-void my_mod(stack_t **, unsigned int);
-void my_mul(stack_t **, unsigned int);
-void my_nop(stack_t **, unsigned int);
-void my_pall(stack_t **, unsigned int);
-void my_pchar(stack_t **, unsigned int);
-void my_pint(stack_t **, unsigned int);
-void my_pop(stack_t **, unsigned int);
-void my_pstr(stack_t **, unsigned int);
-void my_push(stack_t **, unsigned int);
-void my_queue(stack_t **, unsigned int);
-void my_rotl(stack_t **, unsigned int);
-void my_rotr(stack_t **, unsigned int);
-void my_stack(stack_t **, unsigned int);
-void my_sub(stack_t **, unsigned int);
-void my_swap(stack_t **, unsigned int);
+void (*getfunc(char *, unsigned int))(stack_t **, unsigned int);
+void _add(stack_t **, unsigned int);
+void _div(stack_t **, unsigned int);
+void _mod(stack_t **, unsigned int);
+void _mul(stack_t **, unsigned int);
+void _nop(stack_t **, unsigned int);
+void _pall(stack_t **, unsigned int);
+void _pchar(stack_t **, unsigned int);
+void _pint(stack_t **, unsigned int);
+void _pop(stack_t **, unsigned int);
+void _pstr(stack_t **, unsigned int);
+void _push(stack_t **, unsigned int);
+void _queue(stack_t **, unsigned int);
+void _rotl(stack_t **, unsigned int);
+void _rotr(stack_t **, unsigned int);
+void _stack(stack_t **, unsigned int);
+void _sub(stack_t **, unsigned int);
+void _swap(stack_t **, unsigned int);
 void free_stack(stack_t *);
-void free_format(void);
+void free_xtrn(void);
 void q_push(stack_t **, int);
-void open_monty(char **, unsigned int);
+void setup_monty(char **, unsigned int);
 
-extern format fmt;
+extern xtrn_t mt;
+
 #endif

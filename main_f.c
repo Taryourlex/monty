@@ -1,6 +1,6 @@
 #include "monty.h"
 
-xtrn_t mt;
+extern xtrn_t mt;
 
 /**
  * get_op - gets the operation

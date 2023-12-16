@@ -82,6 +82,5 @@ void free_xtrn(void);
 void q_push(stack_t **, int);
 void setup_monty(char **, unsigned int);
 
-extern xtrn_t mt;
 
 #endif

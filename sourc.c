@@ -74,3 +74,4 @@ int my_isdigit(char *nstr)
 
 	return (1);
 }
+
